@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
 	public void invalidLogin() throws IOException {
 		
 		loginPage.loginUsingValidCredential("invalid@gmail.com","invalid");
-		Assert.assertTrue(loginPage.getInavlidEmailPasswordMessage().equals("Invalid emai or password"));
+		Assert.assertTrue(loginPage.getInavlidEmailPasswordMessage().equals("Invalid email or password"));
 		
 	}
 }
