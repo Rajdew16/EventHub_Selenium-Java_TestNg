@@ -37,9 +37,15 @@ public class DashboardPage extends AbstractComponents {
 		.findFirst().ifPresentOrElse(card -> {
 			
 			WebElement bookNowButton =
-		            card.findElement(By.cssSelector("#book-now-btn"));		
-			
-			clickUsingActions(bookNowButton);
+		            card.findElement(By.cssSelector("#book-now-btn"));
+
+			scrollIntoView(bookNowButton);
+			try {
+				waitUsingStaticForUI(150);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			bookNowButton.click();
 		}, () -> {
 			throw new RuntimeException("Event Card not found!");
 		});

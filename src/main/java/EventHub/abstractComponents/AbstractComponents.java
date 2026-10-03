@@ -29,12 +29,28 @@ public class AbstractComponents {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public void waitForElementToClick(WebElement element) {	
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
 	public void waitForAllElementsToAppear(List<WebElement> element) {	
 		wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 	
 	public void clickUsingActions(WebElement element) {
-		actions.scrollToElement(element).moveToElement(element).click().build().perform();
+		actions.moveToElement(element).click().build().perform();
+	}
+	
+	public void clickUsingActionsWithWait(WebElement element, int millis) {
+		actions.pause(Duration.ofMillis(millis)).moveToElement(element).click().build().perform();
+	}
+	
+	public void scrollUsingActions(WebElement element) {
+		actions.scrollToElement(element).build().perform();
+	}
+	
+	public void waitUsingStaticForUI(int time) throws InterruptedException {	
+		Thread.sleep(time);
 	}
 	
 	public void scrollIntoView(WebElement element) {
