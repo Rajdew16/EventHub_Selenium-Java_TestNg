@@ -34,7 +34,7 @@ public class AbstractComponents {
 	}
 	
 	public void clickUsingActions(WebElement element) {
-		actions.moveToElement(element).click().build().perform();
+		actions.scrollToElement(element).moveToElement(element).click().build().perform();
 	}
 	
 	public void scrollIntoView(WebElement element) {

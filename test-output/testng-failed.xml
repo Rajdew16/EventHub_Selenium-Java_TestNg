@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="EventHub.testComponents.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Login Test(failed)">
+  <test thread-count="5" parallel="tests" name="Booking Test(failed)">
     <classes>
-      <class name="EventHub.tests.LoginTest">
+      <class name="EventHub.tests.BookingTest">
         <methods>
-          <include name="invalidLogin"/>
+          <include name="bookEventFromDashboard" invocation-numbers="0 1"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
-      </class> <!-- EventHub.tests.LoginTest -->
+      </class> <!-- EventHub.tests.BookingTest -->
     </classes>
-  </test> <!-- Login Test(failed) -->
+  </test> <!-- Booking Test(failed) -->
 </suite> <!-- Failed suite [EventHub Suite] -->
