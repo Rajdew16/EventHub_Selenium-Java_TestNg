@@ -10,21 +10,7 @@ public class ExtentReportNG {
 
 	
 	public static ExtentReports getReportObject() {
-		//String path = System.getProperty("user.dir") + "\\test-report\\index.html";
-		
-		String reportPath = Path.of(
-                System.getProperty("user.dir"),
-                "test-report",
-                "index.html"
-        ).toString();
-
-        try {
-            Files.createDirectories(
-                    Path.of(System.getProperty("user.dir"), "test-report")
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		String path = System.getProperty("user.dir") + "\\test-report\\index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
 		reporter.config().setReportName("EventHub");
 		reporter.config().setDocumentTitle("EventHub Test Results");
