@@ -8,7 +8,7 @@
     <classes>
       <class name="EventHub.tests.BookingTest">
         <methods>
-          <include name="bookEventFromDashboard" invocation-numbers="0"/>
+          <include name="bookEventFromDashboard" invocation-numbers="0 1"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>

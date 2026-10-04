@@ -45,13 +45,17 @@ public class BaseTest {
 		if(browserName.contains("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			if(browserName.contains("headless")) {
-				options.addArguments("headless");
+				options.addArguments("--headless=new");
+				options.addArguments("--window-size=1920,1080");
+				options.addArguments("--force-device-scale-factor=1");
 			}
 			driver = new ChromeDriver(options);
 		}else if(browserName.contains("firefox")) {
 			driver = new FirefoxDriver();
 		}
-		driver.manage().window().maximize();
+		if (!browserName.contains("headless")) {
+		    driver.manage().window().maximize();
+		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get(baseUrl);
 		return driver;
